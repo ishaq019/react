@@ -58,7 +58,7 @@ const Homepage = () => {
         <div id="card" className="card" style={{width: "23rem"}} onClick={(e) => 
           handleLinkClick("https://www.udemy.com/career/full-stack-web-developer/", e)
         }>
-          <img src="c1.png" className="card-img-top" alt="Full Stack Development"></img>
+          <img src="https://miro.medium.com/v2/resize:fit:1400/1*tDvPpTA8Jw5P_B5xV8gsjw.jpeg" className="card-img-top" alt="Full Stack Development"></img>
           <div className="card-body">
             <h5 className="card-title"><b>Full Stack Web Developer</b></h5>
             <p className="card-text">$127,005 average salary(us) • 16,500 open roles(us)<br></br>
@@ -73,7 +73,7 @@ const Homepage = () => {
         <div id="card1" className="card1" style={{width: "23rem"}} onClick={(e) => 
           handleLinkClick("https://www.udemy.com/career/digital-marketer/", e)
         }>
-          <img src="c2.png" className="card-img-top" alt="Digital Marketing"></img>
+          <img src="https://img-c.udemycdn.com/course/750x422/2776760_f176_9.jpg" className="card-img-top" alt="Digital Marketing"></img>
           <div className="card-body">
             <h5 className="card-title"><b>Digital Marketer</b></h5>
             <p className="card-text">$61,126 average salary(us) • 36,600 open roles(us)<br></br>
@@ -88,7 +88,7 @@ const Homepage = () => {
         <div id="card2" className="card2" style={{width: "23rem"}} onClick={(e) => 
           handleLinkClick("https://www.udemy.com/career/data-scientist/", e)
         }>
-          <img src="c3.png" className="card-img-top" alt="Data Science"></img>
+          <img src="https://cdn.prod.website-files.com/669f9bb34dae01017446db4e/676cca589e9ba2b8e1e5333e_genaifordata-ezgif.com-webp-to-jpg-converter.jpg" className="card-img-top" alt="Data Science"></img>
           <div className="card-body">
             <h5 className="card-title"><b>Data Scientist</b></h5>
             <p className="card-text">$126,629 average salary(us) • 20,800 open roles(us)<br></br>
@@ -112,7 +112,7 @@ const Homepage = () => {
             <div key={index} className="carousel-card" onClick={(e) => 
               handleLinkClick(course.url, e)
             }>
-              <img src={course.img} className="carousel-img" alt={course.title}></img>
+              <img src={`/react/${course.img}`} className="carousel-img" alt={course.title}></img>
               <div className="carousel-content">
                 <h5 className="carousel-title"><b>{course.title}</b></h5>
                 <p className="carousel-text">
@@ -135,7 +135,7 @@ const Homepage = () => {
         <div id="card" className="card" style={{width: "23rem"}} onClick={(e) => 
           handleLinkClick("https://www.udemy.com/course/100-days-of-code/", e)
         }>
-          <img src="c4.png" className="card-img-top" alt="Python Course"></img>
+          <img src="/react/c4.png" className="card-img-top" alt="Python Course"></img>
           <div className="card-body">
             <h5 className="card-title"><b>100 Days of Code: The Complete Python Pro Bootcamp</b></h5>
             <p className="card-text">Master Python by building 100 projects in 100 days<br></br>
@@ -150,7 +150,7 @@ const Homepage = () => {
         <div id="card1" className="card1" style={{width: "23rem"}} onClick={(e) => 
           handleLinkClick("https://www.udemy.com/course/the-complete-web-development-bootcamp/?couponCode=CP130525", e)
         }>
-          <img src="c6.png" className="card-img-top" alt="Web Development"></img>
+          <img src="/react/c6.png" className="card-img-top" alt="Web Development"></img>
           <div className="card-body">
             <h5 className="card-title"><b>The Complete Full-Stack Web Development Bootcamp</b></h5>
             <p className="card-text">Become a full-stack web developer with just one course<br></br>
@@ -165,7 +165,7 @@ const Homepage = () => {
         <div id="card2" className="card2" style={{width: "23rem"}} onClick={(e) => 
           handleLinkClick("https://www.udemy.com/course/aws-certified-cloud-practitioner-new/", e)
         }>
-          <img src="c5.png" className="card-img-top" alt="AWS Course"></img>
+          <img src="/react/c5.png" className="card-img-top" alt="AWS Course"></img>
           <div className="card-body">
             <h5 className="card-title"><b>[NEW] Ultimate AWS Certified Cloud Practitioner CLF-C02 2025</b></h5>
             <p className="card-text">Pass the AWS Cloud Practitioner Certification<br></br>

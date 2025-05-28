@@ -18,10 +18,10 @@ const App = () => {
   const check=()=>{
     if (localStorage.getItem("Login") != "yes") {
       alert("Please Login")
-      navigate("")
+      navigate("/react")
     }
     else if (localStorage.getItem("Login") == "yes") {
-      navigate("/About")
+      navigate("#")
     }
   }
 
@@ -40,7 +40,7 @@ const App = () => {
   const handleLogout = () => {
     setIsLoggedIn(false);
     localStorage.setItem("Login","no")
-    navigate('/');
+    navigate('/react');
   };
 
   // Function to handle successful login
@@ -51,11 +51,11 @@ const App = () => {
   return (
     <div>
       <nav id='Nav_parent'>
-        <Link to='/' className={isActive('/')}>
+        <Link to='/react' className={isActive('/')}>
           Home
         </Link>
-        <button id='btn'  onClick={check}  className={isActive('/About')}>
-          About
+        <button id='btn'  onClick={check} >
+          <a href='#'> Up </a>
         </button>
         <div className="search-container">
           <input 
@@ -72,7 +72,7 @@ const App = () => {
           onClick={() => {
             if (localStorage.getItem("Login") != "yes") {
                alert("Please Login")
-               navigate("")
+               navigate("/react")
               } else {
                 navigate('/Contact')
   } }}
@@ -84,7 +84,7 @@ const App = () => {
           onClick={() => {
             if (localStorage.getItem("Login") != "yes") {
                alert("Please Login")
-               navigate("")
+               navigate("/react")
               } else {
                 navigate('/Assignments')
   } }}
@@ -120,8 +120,8 @@ const App = () => {
 
       <main className="main-content">
         <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path='/About' element={<About />} />
+          <Route path='/react' element={<Homepage />} />
+          {/* <Route path='/About' element={<About />} /> */}
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Assignment' element={<Assignment />} />
           <Route path='/login' element={<Login onLoginSuccess={handleLoginSuccess} />} />

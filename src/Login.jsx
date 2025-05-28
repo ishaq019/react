@@ -41,7 +41,7 @@ const Login = ({ onLoginSuccess }) => {
                 onLoginSuccess();
                 // Redirect after successful login
                 setTimeout(() => {
-                    navigate('/');
+                    navigate('/react');
                 }, 1500);
             }
         } catch (err) {
