@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Registerpage.css';
 
+// Registration endpoint
+const REGISTRATION_URL = 'http://127.0.0.1:8000/register/';
+
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -11,15 +14,15 @@ const Register = () => {
 
   const validateForm = () => {
     if (!username.trim() || !email.trim() || !password.trim()) {
-      setError("Please fill in all fields");
+      setError('Please fill in all fields');
       return false;
     }
     if (!email.includes('@')) {
-      setError("Please enter a valid email address");
+      setError('Please enter a valid email address');
       return false;
     }
     if (password.length < 6) {
-      setError("Password must be at least 6 characters long");
+      setError('Password must be at least 6 characters long');
       return false;
     }
     return true;
@@ -27,7 +30,7 @@ const Register = () => {
 
   const store = async (e) => {
     e.preventDefault();
-    
+
     // Reset error state
     setError("");
 
@@ -38,15 +41,16 @@ const Register = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:8000/register/", {
+      // Register the user
+      const registrationResponse = await axios.post(REGISTRATION_URL, {
         username,
         email,
         password
       });
 
       // Check the actual response status
-      if (res.status === 200) {
-        alert(res.data.msg || "Registration Successful");
+      if (registrationResponse.status === 200) {
+        alert(`Registration Successful! Welcome to our E-learning platform.`);
         // Clear form
         setUsername("");
         setEmail("");
@@ -57,20 +61,20 @@ const Register = () => {
         // Handle specific error cases
         switch (err.response.status) {
           case 400:
-            setError(err.response.data.err || "Email already exists");
+            setError(err.response.data.err || 'Email already exists or invalid data.');
             break;
           case 500:
-            setError(err.response.data.err || "Server error occurred");
+            setError(err.response.data.err || 'Server error occurred');
             break;
           default:
-            setError("Something went wrong. Please try again.");
+            setError('Something went wrong. Please try again.');
         }
       } else if (err.request) {
-        setError("No response from server. Please check your connection.");
+        setError('No response from server for registration. Please check your connection.');
       } else {
-        setError("Error setting up request. Please try again.");
+        setError('Error setting up registration request. Please try again.');
       }
-      console.error("Registration error:", err);
+      console.error('Registration error:', err);
     } finally {
       setLoading(false);
     }

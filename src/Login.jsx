@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Loginpage.css';
 
 const Login = ({ onLoginSuccess }) => {
@@ -33,8 +33,9 @@ const Login = ({ onLoginSuccess }) => {
             if (res.status === 200) {
                 // setSuccess("Login Successful");
                 alert("Login Successful");
-                localStorage.setItem("Login","yes")
+                localStorage.setItem('Login', 'yes')
                 localStorage.setItem('name',res.data.name);
+                localStorage.setItem('email',email);
                 setEmail("");
                 setPassword("");
                 // Call the onLoginSuccess callback
@@ -121,9 +122,9 @@ const Login = ({ onLoginSuccess }) => {
                     </button>
                 </form>
                 <div className="login-footer">
-                    <a href="/forgot-password">Forgot Password?</a>
+                    <Link to="/forgot-password">Forgot Password?</Link>
                     <span> | </span>
-                    <a href="/register">Don't have an account?</a>
+                    <Link to="/register">Don't have an account?</Link>
                 </div>
             </div>
         </div>
